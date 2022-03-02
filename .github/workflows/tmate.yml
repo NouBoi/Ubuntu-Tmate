@@ -19,7 +19,6 @@ jobs:
       
       - name: Generate Tmate Session
         run: |
-          sudo apt install tmate -y
           sudo bash tmate.sh
       
       - name: Spam
