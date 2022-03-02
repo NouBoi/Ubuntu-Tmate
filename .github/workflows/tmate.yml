@@ -1,0 +1,27 @@
+name: Ubuntu SSH
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container:
+      image: marvelmathesh/docker:rom
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Generate Tmate Session
+        run: |
+          sudo apt install tmate -y
+          sudo bash tmate.sh
+      
+      - name: Spam
+        run: |
+          sudo bash spam.sh
